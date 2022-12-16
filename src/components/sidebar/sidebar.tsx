@@ -49,9 +49,8 @@ export const DrawerSidebarComponent = () => {
                         as={ReactRouter}
                         to={`/`}>
                         <Flex
-                            width="100%"
-                            justifyContent="center"
                             align="center"
+                            justifyContent="center"
                             p="4"
                             mx="4"
                             borderRadius="lg"

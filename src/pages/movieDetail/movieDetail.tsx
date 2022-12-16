@@ -19,7 +19,7 @@ function MovieDetail() {
     const borderColor = useColorModeValue('gray.200', 'gray.600');
 
     return (
-        <Box mt="1rem" mx="1rem" width="100%">
+        <Box mt="1rem" mx="1rem" width="100%" overflowY="scroll">
             <Text fontSize="2xl" >{movieSelected!['title']}</Text>
             <Card minWidth="100%">
                 <CardBody>
