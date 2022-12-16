@@ -1,7 +1,31 @@
+@font-face {
+  font-family: "BebasNeue";
+  src: local('BebasNeue-Bold'),
+    url("./fonts/BebasNeue/BebasNeue-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "BebasNeue";
+  src: local('BebasNeue-Light'),
+    url("./fonts/BebasNeue/BebasNeue-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: "BebasNeue";
+  src: local('BebesNeue-Regular'),
+    url('./fonts/BebasNeue/BebasNeue-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'BebasNeue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
