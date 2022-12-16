@@ -14,8 +14,11 @@ export interface Movie {
     poster: string
     languages: string[]
     tomatoes: Ratings
-    imdb: Ratings,
-    plot: string,
+    imdb: Ratings
+    plot: string
+    directors: string[]
+    writers: string[]
+    cast: string[]
     [key: string]: string | number | Object[] | Ratings
 }
 

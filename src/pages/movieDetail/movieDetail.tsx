@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, Flex, Image, Text } from "@chakra-ui/react"
+import { Box, Card, CardBody, Flex, Image, Text, useColorModeValue } from "@chakra-ui/react"
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks"
@@ -14,6 +14,9 @@ function MovieDetail() {
             navigate('/');
         }
     });
+
+    const languageColor = useColorModeValue('white', 'red.900');
+    const borderColor = useColorModeValue('gray.200', 'gray.600');
 
     return (
         <Box mt="1rem" mx="1rem" width="100%">
@@ -32,7 +35,7 @@ function MovieDetail() {
                             <Flex mt="1rem">
                                 {movieSelected!.languages.map((langueage) => {
                                     return (
-                                        <Box bg="black" padding="0.5rem"
+                                        <Box bg={languageColor} padding="0.5rem"
                                             borderRadius="3xl">
                                             <Text>
                                                 {langueage}
@@ -43,10 +46,37 @@ function MovieDetail() {
                             </Flex>
                         </Flex>
                     </Flex>
-                    <Flex>
+                    <Flex mt="1rem" direction="column">
+                        <Flex mb="0.5rem">
+                            {movieSelected?.genres.map((genre) => {
+                                return (
+                                    <Box mx="0.2rem" border='1px' 
+                                        borderColor={borderColor}
+                                        padding="0.5rem"
+                                        borderRadius="3xl">
+                                        <Text>
+                                            {genre}
+                                        </Text>
+                                    </Box>
+                                )
+                            })}
+                        </Flex>
                         <Text>
-                            {movieSelected!.plot}
+                            {movieSelected?.plot}
                         </Text>
+                        <Flex mt="1rem" direction="column">
+                            {['Directors', 'Writers', 'Cast'].map((job: string) => {
+                                return (
+                                    <Flex borderBottom="1px" mt="0.2rem"
+                                        borderBottomColor={borderColor}>
+                                        <Text mr="1rem"mb="0.5rem" fontWeight="bold">{job}</Text>
+                                        <Text>
+                                            {(movieSelected![job.toLowerCase()] as string[]).map((person: string) => `${person}, `)}
+                                        </Text>
+                                    </Flex>
+                                )
+                            })}
+                        </Flex>
                     </Flex>
                 </CardBody>
             </Card>
