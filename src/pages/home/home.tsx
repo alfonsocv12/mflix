@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Text } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
@@ -27,7 +27,7 @@ function Home() {
     const _moviesByGenrer = useAppSelector(selectMovieGenrer);
 
     const dispatch = useAppDispatch();
-    const [searchParams, _] = useSearchParams();
+    const [searchParams] = useSearchParams();
 
     useEffect(() => {
         if (_movies.length === 0) {
@@ -36,7 +36,7 @@ function Home() {
                 dispatch(setGenres());
             })
         }
-    }, []);
+    }, [dispatch, _movies]);
 
     return (
         <Flex overflow="scroll">

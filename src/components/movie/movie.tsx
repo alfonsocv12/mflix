@@ -1,14 +1,12 @@
-import { Card, CardBody, Flex, Box, Image, Text, Center, useColorModeValue } from '@chakra-ui/react';
-import { Movie, selectMovieSelected, setMovieSelected } from '../../features/movies/movieSlide';
+import { Card, Flex, Box, Image, Text } from '@chakra-ui/react';
+import { Movie, setMovieSelected } from '../../features/movies/movieSlide';
 import { StarIcon } from '@chakra-ui/icons';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export const RottenComponent = (raterType: 'viewer' | 'critic', rating: number) => {
     
-    const image = raterType == 'viewer'
+    const image = raterType === 'viewer'
         ? rating >= 3.5 ? 'good.svg' : 'bad.svg'
         : rating >= 6.0 ? 'good.svg' : 'bad.svg'
     return (
