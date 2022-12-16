@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function rottenComponent(raterType: 'viewer' | 'critic', rating: number) {
+export const RottenComponent = (raterType: 'viewer' | 'critic', rating: number) => {
     
     const image = raterType == 'viewer'
         ? rating >= 3.5 ? 'good.svg' : 'bad.svg'
@@ -22,7 +22,7 @@ function rottenComponent(raterType: 'viewer' | 'critic', rating: number) {
 }
 
 
-function rating(movie: Movie) {
+export const RatingComponent = (movie: Movie) => {
     const tomatoViewerRatign: number | null = (movie.tomatoes && movie.tomatoes.viewer)
         ? movie.tomatoes.viewer.rating : null
     const tomatoCriticRating: number | null  = (movie.tomatoes && movie.tomatoes.critic)
@@ -33,9 +33,9 @@ function rating(movie: Movie) {
     return (
         <Flex>
             {tomatoViewerRatign
-                ? rottenComponent('viewer', tomatoViewerRatign) : null}
+                ? RottenComponent('viewer', tomatoViewerRatign) : null}
             {tomatoCriticRating
-                ? rottenComponent('critic', tomatoCriticRating) : null} 
+                ? RottenComponent('critic', tomatoCriticRating) : null} 
             {imdbRating ? (
                 <Box mx="0.2rem">
                     <Box width="25px" height="25px">
@@ -74,7 +74,7 @@ function MovieComponent({ movie }: {movie: Movie}) {
                     flexDirection="column">
                     <Text fontWeight="bold">{movie['title']}</Text>
                     <Text>{movie['languages'].join(', ')}</Text>
-                    {rating(movie)}
+                    {RatingComponent(movie)}
                     {/* {JSON.stringify(movie)} */}
                 </Flex>
             </Flex>

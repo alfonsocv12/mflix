@@ -39,10 +39,12 @@ function Home() {
     }, []);
 
     return (
-        <Flex height="100%" mx="1rem">
-            {_movies 
-                ? getMovies(searchParams.get('q'), _movies, _moviesByGenrer)
-                : "No Movies" }
+        <Flex overflow="scroll">
+            <Flex height="100%" mx="1rem">
+                {_movies
+                    ? getMovies(searchParams.get('q'), _movies, _moviesByGenrer)
+                    : "No Movies"}
+            </Flex>
         </Flex>
     )
 }

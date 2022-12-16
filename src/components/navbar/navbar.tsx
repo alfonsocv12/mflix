@@ -28,7 +28,7 @@ function Menu(isOpen: boolean, onOpen: Function, onClose: Function) {
                     aria-label="open menu"
                     icon={<HamburgerIcon />}
                 />
-                <Text fontSize="2xl" fontFamily="BebasNeue" fontWeight="bold" mx="0.5rem">
+                <Text fontSize="3xl" fontFamily="BebasNeue" fontWeight="bold" mx="0.5rem">
                     MFLIX
                 </Text>
             </Flex>
@@ -84,9 +84,7 @@ function Navbar({ children }: { children: ReactNode}) {
                 overflow="hidden"
                 position="absolute">
                 { sidebar.isOpen  ? <SideBar />: null }
-                <Flex overflow="scroll">
-                    {children}
-                </Flex>
+                {children}
             </Flex>
         </Flex>
     )
