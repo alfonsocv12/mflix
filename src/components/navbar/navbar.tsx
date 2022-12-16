@@ -1,6 +1,6 @@
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { Box, Drawer, DrawerContent, Flex, IconButton, Text, useColorModeValue, useDisclosure } from "@chakra-ui/react";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../app/hooks";
 import { drawerUseDisclosure } from "../../features/drawer/drawer";

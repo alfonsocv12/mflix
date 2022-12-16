@@ -1,4 +1,4 @@
-import { Box, Drawer, DrawerContent, Flex, FlexProps, Link, Text, useColorModeValue, useDisclosure } from "@chakra-ui/react"
+import { Box, Flex, FlexProps, Link, Text, useColorModeValue } from "@chakra-ui/react"
 import { useDispatch } from "react-redux";
 import { Link as ReactRouter } from "react-router-dom";
 import { useAppSelector } from "../../app/hooks";
